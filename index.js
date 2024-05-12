@@ -38,7 +38,7 @@ const number = 20;
 // const number = 40 + 50 + false + "20" + 80;
 // false = 0
 // true = 1
-// конкатиннація - зшивання строк
+// конкатенація - зшивання строк
 console.log(typeof number);
 
 // true = правда 
