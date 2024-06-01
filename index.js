@@ -56,7 +56,6 @@ console.log(string6.indexOf("x")); //2
 // indexOf() - чутливий до регістру
 // -1 index то індекс який повертається якщо нічого не знайдено
 
-
 // метод includes()
 const string7 = "String";
 // чи включає змінна у себе ВЕЛИКУ літеру S
@@ -95,6 +94,40 @@ console.log(string10.padEnd(20, "r"));
 console.log(string10.padEnd(20, string10));
 
 // шаблонні рядки
-// використання похилих лапок 
+// використання похилих лапок
 const user = "Danya";
 console.log(`Привіт, ${user}`);
+
+// продовження
+
+// отримати від користувача число в хвилинах
+// переведемо у час (дні, години, хвилини)
+// const num = 6;
+// const numverInput = document.querySelector("#number");
+// console.log(typeof numverInput.value);
+
+// все що ви записуєте в текстові поля це тип данних STRING
+
+const userInput = prompt("Введіть число");
+
+const numberHours = Number(userInput) / 60;
+const days = Math.floor(numberHours / 24);
+const hours = Math.floor(numberHours % 60);
+const minutes = Number(userInput) % 60;
+console.log(minutes);
+const modHours = String(hours).padStart(2, 0);
+const modMinutes = String(minutes).padStart(2, 0);
+// години ведуть себе не адекватно коли значення 1 день + 
+// треба пофіксить
+console.log(`Дні: ${days} години: ${hours}  хвилини: ${minutes}`);
+
+// const num = 12;
+// const userInput = prompt("Введіть число");
+// // && - і
+// function add(num1, num2) {
+//   if(typeof num1 === "number" && typeof num2 ==="number"){
+//   return num1 + num2;
+//   }
+//   return num1 + num2;
+// }
+// console.log(add(num, Number(userInput)));
