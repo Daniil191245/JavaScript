@@ -1,123 +1,73 @@
-// оголошення змінної
-// існують такі змінні як (1.const 2.let 3.var 4.нічого не оголошувати)
+// DOM aвластивості й атрибути
+// DOM - дозволяє отримати доступ до HTML тегів та атрибутівв та їх замінювати або проводити якісь інші дії
 
-// розбір запису
-// 1) ключове слово(let,const)
-// 2) назва вашої змінної
-// 3) = це є оператор присвоєння, який дозволяє присвоїти щось
-// 4) "" це є значення нашого писвоєння
+// document - звертаємось до всього нашого документу, або це наша HTML сторінка
 
-// 1. Змінна const
-const hobby = "грати";
-// змінні НЕ можуть повторюватися, тому що буде помилка
+// достатньо популярні методи
+// document.getElementById()
+// getElementById() - отримує HTML елемент за його ID
 
-//перше слово з маленької, всі інші починаються з великої(правило записування змінної)
-const veryLongNameHere = "";
-// const - яку не можна змінювати або перевизначати в майбутньому 
+// document.getElementsByClassName()
+// getElementsByClassName() - отримує HTML елементи за class
 
-// 2.Змінна let
-let age ;
-age = 20;
-// let -  НЕ обов'язково давати значення одразу можна і в кінці коду дати значення
-// ви можете змінювати його нижче у коді безліч разів
+// популярні методи
+// document.querySelector() // дозволяє вам отримати доступ до HTML тег за будь-якою ознакою
+// ознака - id, class, фтрибут, тег
 
-console.log(age);
+// document.querySelectorAll() // якщо багато співпадають,знайде тільки перший збіг
+// querySelectorAll() - знаходить всі елементи з однаковою ознакою
 
-// 3.Змінна var
-// var asd = 2 ;
-// var = це let і const два в одному
-// це є старий стандарт
+const navButton = document.querySelector(".nav-button");
+console.log(navButton);
 
-// 4.Змінна нічого не оголошувати 
-// існує ще один тип оголошення змінної
-// але коли ми вмикаємо суворий режим, то тоді в консолі вибиває помилку.(тобіж воно працює тільки НЕ в суворому режимі (type="module") й також раціональніше буде використовувати змінні let const)
+// .textContent - звертаємося до текстового наповнення HTML елементу
+navButton.textContent = "Товару немає";
+// перевизначає текст елементу
 
-// x = 5;
-// console.log(x);
-// x = 209;
-// console.log(x);
+const input = document.querySelector(".input");
+console.log(input.value);
+// value -  це атрибут HTML який зберігає значення input
 
+const checkbox = document.querySelector(".checkbox");
+checkbox.cheked = true;
+// console.log(checkbox.cheked);
 
+const img = document.getElementById("img");
+img.src = "https://i.work.ua/article/579b.jpg";
 
+// const navBar = document.querySelector(".header-nav");
 
+// document.body - до тегу body  можна звернутися напряму через документ
+document.body.style.backgroundColor = "green";
 
+// const dark = document.querySelector(".dark");
+// const white = document.querySelector(".white");
+// dark.addEventListener("click", darkTheme)
+// white.addEventListener("click", whiteTheme)
 
-
-// типи данних
-// існує 7 примітивних типів: 
-
-// 1. Тип данних, це рядок strings 
-// (обов'язково записувати у лапках інакше не буде вважатися рядком)
-// це є рядок
-const string = "dsfgdfhrydfvc";
-console.log(typeof string);
-
-// 2.Тип данних це число number
-// записується без лапок
-// це є число
-const number = 20;
-// const number = "20" + 80;
-// const number = 40 + 50 + false + "20" + 80;
-// false = 0
-// true = 1
-// конкатенація - зшивання строк
-console.log(typeof number);
-// typeof - дозволяє визначити типи даннних
-// конкатенація - зшивання строк
-// інтерполяція - 
-const fr = "fbhdjgdsbfgjbdskjbsdb";
-
-console.log(`"${fr}"`);
-// це є приклад інтерполяції
-
-// 3.Тип данних це boolean (правда або не правда)
-// true = правда 
-// false = не правда
-const boolean = true || false;
-console.log(typeof boolean);
-
-// 4.Тип данних це null
-const isNull = null;
-// null - це є нічого, ми створюємо змінну в якій пізніше щось буде,тобіж колись щось покладено.
-
-// 5.Тип данних це undefined
-const undef = undefined;
-// undefined - це є нічого НЕ знайдено, ми спробували щось знайти, але його немає, що ми шукали.
-
-// 6. Тип данних це BigInt = великі числа
-const as = 23698744120;
-console.log(typeof as)
-const asl = BigInt(14556565554125541254512541);
-// BigInt = це є велике число використовується в банківській справі
-// BigInt, Symbol використовуються дуже рідко
-
-// 7.Тип данних це Symbo
-// Symbo = викоритовується в бібліотеках, щоб запам'ятовувати значення, дозволяє створювати і порівнювати символи
-
-
-// Взвємодія з користовачем
-alert;
-// найпростіший спосіб щось повідомити користовачу, спливаюче повідомлення.
-alert("вам нараховано кошти")
-
-confirm;
-// взіємодіє з boolean, тобіж розподіл на true або false
-prompt;
-//prompt -  просить користувача щось небудь ввести
-
-
-// все що пишеться через крапку це є властивость, 
-// if(age.length >= 2){
+// function darkTheme(e){
+//     document.body.style.backgroundColor = "white";
 // }
-// .length - довжина
-// а.length - довжина строки а
-// це все є оператором порівняння 
+// function whiteTheme(e) {
+//   document.body.style.backgroundColor = "dark";
+// }
 
-// за рахунок цього, можна повідомити користувача через модальне вікно, яке вспливає
-// alert("Все пропало, все погано, все упало");
+const dark = document.querySelector(".dark");
+const white = document.querySelector(".white");
 
-// const message = confirm ("Чи згодні ви ?");
-// console.log(message);
+// classList - список класів,  у кожного елементи є
+white.classList.add("something");
+white.classList.remove("something");
+console.log(white.classList);
+// add - додати
+// remove - видалити
+// таким чином ми можемо додавати класи елементам й також видаляти
+white.classList.toggle("something");
+// toggle - працює в обидві сторони може додати та видалити
+white.classList.contains("something");
+// containes - чи включає классліст такий клас
 
-// const asds = prompt("Введіть ім'я");
-// console.log(asds);
+console.log(white.classList.contains("somethingfff"));
+
+// events
+// if else switch
