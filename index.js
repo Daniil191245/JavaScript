@@ -69,5 +69,6 @@ white.classList.contains("something");
 
 console.log(white.classList.contains("somethingfff"));
 
+
 // events
 // if else switch
