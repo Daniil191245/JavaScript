@@ -3,7 +3,6 @@
 const language = navigator.language || navigator.userAgent;
 console.log(language);
 
-<<<<<<< Updated upstream
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(
     (position) => {
@@ -21,7 +20,6 @@ const browserInfo = `Браузер${navigator.appCodeName}, ${navigator.appVers
 
 console.log(browserInfo);
 
-=======
 
 if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(position =>{
@@ -36,4 +34,3 @@ if(navigator.geolocation){
 // events
 // --submit
 // --change
->>>>>>> Stashed changes
