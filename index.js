@@ -66,30 +66,64 @@ function onClick(event) {
 // 3.додати на цей еолемент  слухача подій addEventListener;
 
 // --click
+
 // --submit
-// --focus
-// --keydown
+// submit - це подія відправки форми, ми можемо слідкувати за віправкою форми
+const form = document.querySelector(".form");
+form.addEventListener("submit", onSubmit);
+function onSubmit(e) {
+  e.perventDefault();
+  // відключення перезавантаження сторінки при віправці форми(віключення, будь-яких дій. які відбуаються за замовчуванням)
+  console.log("Форма відправленна");
+}
+
 // --change
+// це подія для радіо кнопок, також цеп є подією для чекбоксів
+const chek = document.getElementById("checkbox");
+chek.addEventListener("change", onChange);
+function onChange(e) {
+  console.log(e.target.checked);
+  // це звичайний атрибут який видає занчення true або false, тобто вказує на те чи чекнут
+}
+
+// --focus
+//  фокусуання, стан коли ми тицьнули на інтерактивний елемент
+input1.addEventListener("focus", onFocus);
+function onFocus(e) {
+  console.log(e);
+  input1.style.color = "green";
+}
+
+// --blur
+// подія втрати фокуса, втрата контакту з інтерактивним елементом
+input1.addEventListener("blur", onBlur);
+function onBlur(e) {
+  if (e.target.value.length < 5) {
+    input1.style.borderColor = "red";
+  }
+}
+
+// --keydown
 
 // Об'єкт події
-
 // input - подія вводу тексту
 // submit -  подія відправки форми
 
-const form = document.querySelector(".form");
-form.addEventListener("input", onInput);
+// form.addEventListener("input", onInput);
 
-function onInput(event) {
-  console.log("target:", event.target.value);
-  // form.elemets - диятячі елементи форми
-  // ми проіменуваоли за допомогою атрибуту name всі дитячі поля
-  // отримали значення через .value
-  const input1Value = form.elements.input1.value;
-  const input2Value = form.elements.input2.value;
-  console.log(input1Value);
-  console.log(input2Value);
-  console.log(form.elements);
+// function onInput(event) {
+//   console.log("target:", event.target.value);
+// form.elemets - диятячі елементи форми
+// ми проіменуваоли за допомогою атрибуту name всі дитячі поля
+// отримали значення через .value
+// const input1Value = form.elements.input1.value;
+// const input2Value = form.elements.input2.value;
+// console.log(input1Value);
+// console.log(input2Value);
+// console.log(form.elements);
 
-  const concaatValue = input1Value + input2Value;
-  // console.log("currentTarget:", event.currentTarget);c
-}
+// const concaatValue = input1Value + input2Value;
+// console.log("currentTarget:", event.currentTarget);c
+// }
+
+// чорна магія
