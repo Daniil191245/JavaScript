@@ -1,78 +1,42 @@
-// розгалуження.інструкція switch.область видимості.
+// Цикли
+// while(лічильник, авторизація)
 
-// if else
-// if - якщо щось трапилось я зроблю те що ти написав у фігурних дужках
-// якщо в круглих дужках буде true  то відпрацює те що ви написали ц фігурних дужках далі.
-// true = 1 false = 0
-// якщо в круглих дужках ми отримуємо falseс, то управління переходить в блок else, якщо його немає то if не виконується і код продовжує виконуватися
-if (0) {
-  console.log("робе");
-} else {
-  console.log("Не робе");
+let i = 0;
+// if дуже схожий на while
+// while - ключове слово для створення циклу
+// ( - умова для виконання циклу), коли ця умова перестане виконуватия то цикл теж перестане виконуватися
+// поки умова виконується буде виконуватися той код що у вас записаний у фігурних дужках
+// {} - тіло циклу
+while (i <= 10) {
+  // i = i + 1;
+  // i += 1;
+  i++;
+  console.log(i);
 }
-console.log("щось далі");
-
-const age = 15;
-const auth = true;
-// ||логічний оператор АБО, маютьвиконуватись обидві вимоги
-// && - амперсанти,  логічні оператор який звучить як (&&=і)
-// ! = НЕ  це є логічне НЕ
-if (age >= 18 || auth === true) {
-  console.log("робе");
-} else {
-  console.log("не робе");
-}
-
-console.log(true && false && true); // false
-console.log((false && true) || true || false); // true
-
-// switch. будь-який switch можна замінит на блок if else
-// switch - використовуємо в рідких випадках \
-const user = 51;
-const silver = 100;
-const gold = 200;
-const diamond = 500;
-const bronze = 50;
-// case - це якась подія
-switch (user) {
-  case bronze:
-    console.log("bronze підписка");
-    break;
-  case silver:
-    console.log("silver підписка");
-    break;
-  case gold:
-    console.log("gold підписка");
-    break;
-  case diamond:
-    console.log("diamond підписка");
-    break;
-  default:
-    console.log("купіть підписку");
-    break;
+// виконується поки умова true, якщо умова приводиться до false то не виконується жодного разу
+let auth = false;
+while (!auth) {
+  const password = prompt("Введи пароль");
+  if (password === "123456") {
+    auth = true;
+    alert("Вітаємо Вас у системі");
+  } else {
+    alert("Спробуй ще");
+  }
 }
 
-const ROLE = {
-  author: "author",
-  read_only: "user",
-  admin: "admin",
-};
+//  do whyle
+// while - спочатку перевіряє, а потім робе
+// do whyle - спочатку зроби, а потім подумай
 
-const user1 = "admin";
-const author = "author";
-const read_only = "user";
-const admin = "admin";
-switch (user1) {
-  case author:
-    console.log("Ти можеш додати якийсь контент");
-    break;
-  case read_only:
-    console.log("Ти можеш переглядати якийсь контент");
-    break;
-  case admin:
-    console.log("Ти можеш редагувати якийсь контент");
-    break;
-  default:
-    console.log("Зареєструйтесь, будь ласка");
-    break;
-}
+// Redirect
+let ok = false;
+
+do{
+  ok = confirm("Чи згодні ви, що вас редіректне на іншу сторінку для переглядів бажаного контенту?");
+   if (true) {
+     // таким чином можемо редірект на іншу сторінку
+     console.log((window.location.href = "https://google.com/"));
+   }
+} while (!ok);
+
