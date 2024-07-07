@@ -1,7 +1,7 @@
 // Цикли
 // while(лічильник, авторизація)
 
-let i = 0;
+// let i = 0;
 // if дуже схожий на while
 // while - ключове слово для створення циклу
 // ( - умова для виконання циклу), коли ця умова перестане виконуватия то цикл теж перестане виконуватися
@@ -80,11 +80,6 @@ let choice;
 //   console.log(i);
 // }
 
-
-
-
-
-
 // const array = [1, 2, 3, 4, 5];
 // // console.log(array.length);
 // for (let index = 0; index < array.length; index++) {
@@ -92,7 +87,6 @@ let choice;
 //   const element = array[index];
 //   console.log(element**2);
 // }
-
 
 // const users = ["Petro", "Tamara", "Roman", "Tetiana", "Artem", "Danya"];
 // const random = Math.floor(Math.random() * users.length);
@@ -112,19 +106,75 @@ let choice;
 // }
 // break(lottery, Redirect), continue(парні не парні)
 
+// for (let i = 0; i < 50; i++) {
+//   if (i === 7) {
+//     // пропусти данний варіант та перейди одразу на настпуний
+//     continue;
+//   }
+//   if (i % 2 === 0) {
+//     continue;
+//   }
+//   console.log(i);
+  //  if (i % 2 === 1) {
+  //   // console.log(i); // не парне
+  //   // console.log((i = "Парне")); // парне
+  //  }
+// }
 
-for (let i = 0; i < 50; i++) {
-if (i === 7) {
-  // пропусти данний варіант та перейди одразу на настпуний
-  continue;
+
+
+
+// Вивести на екран всі числа від 1 до 10 за допомогою циклу while.
+// let n = 1;
+// while (n <= 10) {
+//   console.log(n);
+// }
+// Вивести на екран всі парні числа від 2 до 20 за допомогою циклу for. Якщо число не парне, пропустити його за допомогою continue.
+for (let i = 2; i <= 20; i++) {
+  if (i % 2 === 1) {
+    continue;
+  } else {
+    console.log(i);
+  }
 }
-if (i % 2 === 0){
-  continue;
+// Вивести на екран таблицю множення числа 7 за допомогою циклу for.
+const number = 7;
+for (let i = 1; i <= 10; i++) {
+  console.log(number * i);
 }
-console.log(i);
-//  if (i % 2 === 1) {
-//   // console.log(i); // не парне
-//   // console.log((i = "Парне")); // парне
-//  }
-  
+
+// Створити масив з числами від 1 до 5. Вивести на екран кожен елемент масиву за допомогою циклу while.
+const names = [1, 2, 3, 4, 5];
+while (i <= names.length - 1) {
+  i++;
+  console.log(i);
 }
+
+// for (let index = 0; index < names.length; index++) {
+//   const element = names[index];
+//   console.log(element);
+// }
+// console.log(names[names.length - 1]);
+// індекси рахуються з нуля
+// за цим записом ми отримали останній елемент масиву
+// console.log(names.[names.length - 1]);
+
+
+
+
+// Створити масив із числами від 1 до 10. За допомогою циклу for пройтися по масиву та вивести на екран всі числа, крім числа 7. Якщо зустрінете число 7, закінчити виконання циклу за допомогою оператора break.
+
+// Створити скрипт, який виводить на екран всі числа, які менші за n. Якщо зустрічається число, що більше або дорівнює n, цикл повинен бути закінчений за допомогою break.
+
+const n = 100;
+let i = 1;
+
+while (i < n) {
+  i++;
+  if (i <= 10) {
+    console.log(i);
+  } else {
+    break;
+  }
+}
+// За допомогою циклу while вивести на екран всі числа від 1 до 20, крім чисел, кратних 3. Якщо зустрінете число, кратне 3, цикл повинен продовжити виконання за допомогою оператора continue.
