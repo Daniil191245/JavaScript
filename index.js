@@ -1,123 +1,46 @@
-// оголошення змінної
-// існують такі змінні як (1.const 2.let 3.var 4.нічого не оголошувати)
+// 1.
+const printmessage = function (message) {
+  console.log(message);
+};
 
-// розбір запису
-// 1) ключове слово(let,const)
-// 2) назва вашої змінної
-// 3) = це є оператор присвоєння, який дозволяє присвоїти щось
-// 4) "" це є значення нашого писвоєння
+const highOrderFunc = function (callback) {
+  const string = "Stroka";
+  callback(string);
+};
+highOrderFunc(printmessage);
+// console.log(highOrderFunc(printmessage));
 
-// 1. Змінна const
-const hobby = "грати";
-// змінні НЕ можуть повторюватися, тому що буде помилка
+// 2.
+const button = document.getElementById("type");
+button.addEventListener("click", onClickFuck);
 
-//перше слово з маленької, всі інші починаються з великої(правило записування змінної)
-const veryLongNameHere = "";
-// const - яку не можна змінювати або перевизначати в майбутньому 
+function onClickFuck(e) {
+  console.log("click");
+}
+// 3.
+const repeatLog = function (n) {
+  for (let i = 0; i < n; i++) {
+    console.log(i);
+  }
+};
+repeatLog(10);
 
-// 2.Змінна let
-let age ;
-age = 20;
-// let -  НЕ обов'язково давати значення одразу можна і в кінці коду дати значення
-// ви можете змінювати його нижче у коді безліч разів
+// 4.
+const array = [10, 21, 30, 41, 50, 61, 70, 81, 90, 101];
+// функцця вищого порядку
+const filter = function (array, test) {
+  const filteredArr = test(array);
+  return filteredArr;
+};
+// callback
+function testNumbers(array) {
+  const resultArr = [];
+  for (const element of array) {
+    if (element % 2 === 0) {
+      resultArr.push(element);
+    }
+  }
+  return resultArr;
+}
 
-console.log(age);
-
-// 3.Змінна var
-// var asd = 2 ;
-// var = це let і const два в одному
-// це є старий стандарт
-
-// 4.Змінна нічого не оголошувати 
-// існує ще один тип оголошення змінної
-// але коли ми вмикаємо суворий режим, то тоді в консолі вибиває помилку.(тобіж воно працює тільки НЕ в суворому режимі (type="module") й також раціональніше буде використовувати змінні let const)
-
-// x = 5;
-// console.log(x);
-// x = 209;
-// console.log(x);
-
-
-
-
-
-
-
-// типи данних
-// існує 7 примітивних типів: 
-
-// 1. Тип данних, це рядок strings 
-// (обов'язково записувати у лапках інакше не буде вважатися рядком)
-// це є рядок
-const string = "dsfgdfhrydfvc";
-console.log(typeof string);
-
-// 2.Тип данних це число number
-// записується без лапок
-// це є число
-const number = 20;
-// const number = "20" + 80;
-// const number = 40 + 50 + false + "20" + 80;
-// false = 0
-// true = 1
-// конкатенація - зшивання строк
-console.log(typeof number);
-// typeof - дозволяє визначити типи даннних
-// конкатенація - зшивання строк
-// інтерполяція - 
-const fr = "fbhdjgdsbfgjbdskjbsdb";
-
-console.log(`"${fr}"`);
-// це є приклад інтерполяції
-
-// 3.Тип данних це boolean (правда або не правда)
-// true = правда 
-// false = не правда
-const boolean = true || false;
-console.log(typeof boolean);
-
-// 4.Тип данних це null
-const isNull = null;
-// null - це є нічого, ми створюємо змінну в якій пізніше щось буде,тобіж колись щось покладено.
-
-// 5.Тип данних це undefined
-const undef = undefined;
-// undefined - це є нічого НЕ знайдено, ми спробували щось знайти, але його немає, що ми шукали.
-
-// 6. Тип данних це BigInt = великі числа
-const as = 23698744120;
-console.log(typeof as)
-const asl = BigInt(14556565554125541254512541);
-// BigInt = це є велике число використовується в банківській справі
-// BigInt, Symbol використовуються дуже рідко
-
-// 7.Тип данних це Symbo
-// Symbo = викоритовується в бібліотеках, щоб запам'ятовувати значення, дозволяє створювати і порівнювати символи
-
-
-// Взвємодія з користовачем
-alert;
-// найпростіший спосіб щось повідомити користовачу, спливаюче повідомлення.
-alert("вам нараховано кошти")
-
-confirm;
-// взіємодіє з boolean, тобіж розподіл на true або false
-prompt;
-//prompt -  просить користувача щось небудь ввести
-
-
-// все що пишеться через крапку це є властивость, 
-// if(age.length >= 2){
-// }
-// .length - довжина
-// а.length - довжина строки а
-// це все є оператором порівняння 
-
-// за рахунок цього, можна повідомити користувача через модальне вікно, яке вспливає
-// alert("Все пропало, все погано, все упало");
-
-// const message = confirm ("Чи згодні ви ?");
-// console.log(message);
-
-// const asds = prompt("Введіть ім'я");
-// console.log(asds);
+filter(array, testNumbers);
