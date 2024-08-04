@@ -44,3 +44,18 @@ function testNumbers(array) {
 }
 
 filter(array, testNumbers);
+
+// лаконічний синтаксис
+// фанкшн деларейшн
+function getPlus(a, b) {
+  return a + b;
+}
+
+// стрілкова функція
+// => - має вбудований ретурн
+const plus = (a, b, c) => a + b + c;
+
+const plus1 = (a, b, c) => {
+  const sum = a + b + c;
+  return sum;
+};
