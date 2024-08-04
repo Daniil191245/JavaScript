@@ -1,123 +1,119 @@
-// оголошення змінної
-// існують такі змінні як (1.const 2.let 3.var 4.нічого не оголошувати)
+// об'єкти методи, властивості.
 
-// розбір запису
-// 1) ключове слово(let,const)
-// 2) назва вашої змінної
-// 3) = це є оператор присвоєння, який дозволяє присвоїти щось
-// 4) "" це є значення нашого писвоєння
+const kryzks = {
+  color: ["white", "blue"],
+  volume: "500ml",
+};
 
-// 1. Змінна const
-const hobby = "грати";
-// змінні НЕ можуть повторюватися, тому що буде помилка
+const figurka = {
+  size: "small",
+  color: "green",
+};
 
-//перше слово з маленької, всі інші починаються з великої(правило записування змінної)
-const veryLongNameHere = "";
-// const - яку не можна змінювати або перевизначати в майбутньому 
+const poster = {};
+// {} - об'єкт
+// додавання властивостей відбуважться через крапку
+poster.material = "paper";
 
-// 2.Змінна let
-let age ;
-age = 20;
-// let -  НЕ обов'язково давати значення одразу можна і в кінці коду дати значення
-// ви можете змінювати його нижче у коді безліч разів
+console.log(poster);
+// отримати значення з об'єкту
+poster.material;
+console.log(poster.material);
+// щоботримати значення з об'єкту, треба просто через крапку написати властиивістьт і отримаємо азнаячення
+// poster.material - запис виглядає так.
+console.log(poster["material"]);
 
-console.log(age);
+const objArr = [
+  { material: "paper" },
+  { material: "iron" },
+  { material: "metal" },
+  { material: "paper" },
+  { material: "iron" },
+  { material: "metal" },
+  { material: "paper" },
+  { material: "iron" },
+  { material: "metal" },
+  { material: "paper" },
+  { material: "iron" },
+  { material: "metal" },
+  { material: "paper" },
+  { material: "iron" },
+  { material: "metal" },
+  { material: "paper" },
+  { material: "iron" },
+  { material: "metal" },
+  { material: "paper" },
+  { material: "iron" },
+  { material: "metal" },
+  { material: "paper" },
+  { material: "iron" },
+  { material: "metal" },
+  { material: "paper" },
+  { material: "iron" },
+  { material: "metal" },
+  { material: "paper" },
+  { material: "iron" },
+  { material: "metal" },
+];
 
-// 3.Змінна var
-// var asd = 2 ;
-// var = це let і const два в одному
-// це є старий стандарт
+function filter(objArr, material) {
+  const filteredArr = [];
+  for (const obj of objArr) {
+    console.log(obj);
+    if (obj.material === material) {
+      filteredArr.push(obj);
+    }
+  }
+  return filteredArr;
+}
+filter(objArr);
+console.log(filter(objArr, "paper"));
 
-// 4.Змінна нічого не оголошувати 
-// існує ще один тип оголошення змінної
-// але коли ми вмикаємо суворий режим, то тоді в консолі вибиває помилку.(тобіж воно працює тільки НЕ в суворому режимі (type="module") й також раціональніше буде використовувати змінні let const)
+// вмдаленнЯ властивостей
+// delete - оператор видалення.
+delete figurka.color;
+console.log(figurka);
 
-// x = 5;
-// console.log(x);
-// x = 209;
-// console.log(x);
+// заміна властивостей
+const figerk = {
+  size: "250mm",
+};
 
+figerk.size = "2m";
+console.log(figerk);
 
+// short properties
 
+const email = "dfsafgsdfgad@.com";
+const password = "fdsgfds5448512";
+const userName = "Vasya";
 
-
-
-
-// типи данних
-// існує 7 примітивних типів: 
-
-// 1. Тип данних, це рядок strings 
-// (обов'язково записувати у лапках інакше не буде вважатися рядком)
-// це є рядок
-const string = "dsfgdfhrydfvc";
-console.log(typeof string);
-
-// 2.Тип данних це число number
-// записується без лапок
-// це є число
-const number = 20;
-// const number = "20" + 80;
-// const number = 40 + 50 + false + "20" + 80;
-// false = 0
-// true = 1
-// конкатенація - зшивання строк
-console.log(typeof number);
-// typeof - дозволяє визначити типи даннних
-// конкатенація - зшивання строк
-// інтерполяція - 
-const fr = "fbhdjgdsbfgjbdskjbsdb";
-
-console.log(`"${fr}"`);
-// це є приклад інтерполяції
-
-// 3.Тип данних це boolean (правда або не правда)
-// true = правда 
-// false = не правда
-const boolean = true || false;
-console.log(typeof boolean);
-
-// 4.Тип данних це null
-const isNull = null;
-// null - це є нічого, ми створюємо змінну в якій пізніше щось буде,тобіж колись щось покладено.
-
-// 5.Тип данних це undefined
-const undef = undefined;
-// undefined - це є нічого НЕ знайдено, ми спробували щось знайти, але його немає, що ми шукали.
-
-// 6. Тип данних це BigInt = великі числа
-const as = 23698744120;
-console.log(typeof as)
-const asl = BigInt(14556565554125541254512541);
-// BigInt = це є велике число використовується в банківській справі
-// BigInt, Symbol використовуються дуже рідко
-
-// 7.Тип данних це Symbo
-// Symbo = викоритовується в бібліотеках, щоб запам'ятовувати значення, дозволяє створювати і порівнювати символи
-
-
-// Взвємодія з користовачем
-alert;
-// найпростіший спосіб щось повідомити користовачу, спливаюче повідомлення.
-alert("вам нараховано кошти")
-
-confirm;
-// взіємодіє з boolean, тобіж розподіл на true або false
-prompt;
-//prompt -  просить користувача щось небудь ввести
-
-
-// все що пишеться через крапку це є властивость, 
-// if(age.length >= 2){
-// }
-// .length - довжина
-// а.length - довжина строки а
-// це все є оператором порівняння 
-
-// за рахунок цього, можна повідомити користувача через модальне вікно, яке вспливає
-// alert("Все пропало, все погано, все упало");
-
-// const message = confirm ("Чи згодні ви ?");
-// console.log(message);
-
-// const asds = prompt("Введіть ім'я");
-// console.log(asds);
+const user = {
+  email: email,
+  password: password,
+  userName: userName,
+};
+console.log(user);
+const user1 = {
+  email,
+  password,
+  userName,
+  registration: function registration() {
+    // this = це контекст
+    console.log(this.email, this.password, this.userName);
+  },
+  goWolk: function () {
+    console.log("я пішов гулять");
+  },
+  up: function () {
+    console.log("up");
+  },
+  changeUserName: function (newUserName) {
+    this.userName = newUserName;
+  },
+};
+console.log(user1);
+user1.registration();
+user1.goWolk();
+user1.changeUserName("petro");
+// методи об'єкта
